@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: challenge
+  namespace: quizup-prod
+  labels:
+    app: challenge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: challenge
+  template:
+    metadata:
+      labels:
+        app: challenge
+    spec:
+      containers:
+        - name: challenge
+          image: ghcr.io/quizup-organization/challenge:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

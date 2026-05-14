@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: quizup-matchmaking
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/quizup-organization/quizup-deploy.git
+    targetRevision: main
+    path: apps/matchmaking
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: quizup-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: social
+  namespace: quizup-prod
+  labels:
+    app: social
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: social
+  template:
+    metadata:
+      labels:
+        app: social
+    spec:
+      containers:
+        - name: social
+          image: ghcr.io/quizup-organization/social:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

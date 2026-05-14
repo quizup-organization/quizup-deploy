@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: theme
+  namespace: quizup-prod
+  labels:
+    app: theme
+spec:
+  selector:
+    app: theme
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080

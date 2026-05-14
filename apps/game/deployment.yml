@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game
+  namespace: quizup-prod
+  labels:
+    app: game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: game
+  template:
+    metadata:
+      labels:
+        app: game
+    spec:
+      containers:
+        - name: game
+          image: ghcr.io/quizup-organization/game:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
