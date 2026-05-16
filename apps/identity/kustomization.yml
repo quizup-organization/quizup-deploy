@@ -4,6 +4,7 @@ namespace: quizup-prod
 resources:
   - deployment.yml
   - service.yml
+  - ingress.yml
 images:
   - name: ghcr.io/quizup-organization/identity
     newTag: "1.0.0"
