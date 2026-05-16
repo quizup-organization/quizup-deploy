@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.QUIZUP_GITHUB_TOKEN }}
 
       - name: Update kustomization image tag
         run: |
