@@ -8,4 +8,4 @@ resources:
   - sealed-secret.yml
 images:
   - name: ghcr.io/quizup-organization/profile
-    newTag: "1.0.0"
+    newTag: "1.0.1"
