@@ -5,6 +5,8 @@ resources:
   - deployment.yml
   - service.yml
   - ingress.yml
+  - configmap.yml
+  - sealed-secret.yml
 images:
   - name: ghcr.io/quizup-organization/gateway
     newTag: "1.0.0"

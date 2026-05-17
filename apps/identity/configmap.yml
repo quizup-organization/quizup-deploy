@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quizup-identity-config
+  namespace: quizup-prod
+data:
+  QUIZUP_DB_HOST: postgres
+  QUIZUP_DB_PORT: "5432"
+  QUIZUP_DB_NAME: quizup_identity
+  QUIZUP_RABBITMQ_HOST: rabbitmq
+  QUIZUP_RABBITMQ_PORT: "5672"
+  QUIZUP_RABBITMQ_VHOST: /
+  QUIZUP_AUTH_SERVER_URL: http://identity.quizup-prod.svc.cluster.local:8080
+  QUIZUP_LOG_LEVEL: INFO
+

@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: quizup-challenge
+  name: quizup-infrastructure
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/quizup-organization/quizup-deploy.git
     targetRevision: main
-    path: apps/challenge
+    path: infrastructure
   destination:
     server: https://kubernetes.default.svc
     namespace: quizup-prod
@@ -18,3 +18,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+

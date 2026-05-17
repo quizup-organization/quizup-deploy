@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quizup-infra-config
+  namespace: quizup-prod
+data:
+  POSTGRES_DB: quizup
+  POSTGRES_USER: quizup
+  RABBITMQ_DEFAULT_USER: quizup
+

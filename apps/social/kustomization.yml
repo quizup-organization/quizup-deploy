@@ -4,6 +4,8 @@ namespace: quizup-prod
 resources:
   - deployment.yml
   - service.yml
+  - configmap.yml
+  - sealed-secret.yml
 images:
   - name: ghcr.io/quizup-organization/social
     newTag: "1.1.0"
