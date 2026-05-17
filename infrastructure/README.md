@@ -7,7 +7,7 @@ Ce dossier contient les manifests partages du cluster pour les dependances runti
 - `postgres.yml`: service DNS `postgres` + StatefulSet PostgreSQL
 - `rabbitmq.yml`: service DNS `rabbitmq` + Deployment RabbitMQ
 
-Contrat reseau expose aux services QuizUp (namespace `quizup-prod`):
+Contrat réseau expose aux services QuizUp (namespace `quizup-prod`):
 
 - Postgres: `postgres.quizup-prod.svc.cluster.local:5432`
 - RabbitMQ: `rabbitmq.quizup-prod.svc.cluster.local:5672`
