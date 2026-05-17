@@ -8,4 +8,4 @@ resources:
   - sealed-secret.yml
 images:
   - name: ghcr.io/quizup-organization/social
-    newTag: "1.1.0"
+    newTag: "1.1.1"
