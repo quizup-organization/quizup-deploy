@@ -48,7 +48,7 @@ quizup-deploy/
 | `apps/game` | `quizup-game` | microservice |
 
 > **Note** : pas de dossier pour `user-service`, `profile-service` ni `leaderboard-service` —
-> cohérent avec le fait que ces services n'existent pas (voir `quizup-gateway/AGENTS.md` §3).
+> ces services n'existent pas dans le workspace.
 
 ---
 
