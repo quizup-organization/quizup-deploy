@@ -8,6 +8,7 @@
 ## 1. Rôle
 
 Déploiement des composants QuizUp sur Kubernetes :
+
 - **ArgoCD** app-of-apps : une app ArgoCD qui gère toutes les autres (apps de chaque service).
 - **Infrastructure** : Postgres, RabbitMQ, sealed-secrets, configmaps, kustomize.
 - **Applications** : un dossier par service (frontend, game, gateway, identity, matchmaking,
@@ -21,7 +22,6 @@ Déploiement des composants QuizUp sur Kubernetes :
 quizup-deploy/
 ├── argocd/            ← configuration ArgoCD (app-of-apps)
 ├── apps/              ← manifests par service
-│   ├── frontend/
 │   ├── game/
 │   ├── gateway/
 │   ├── identity/
@@ -37,27 +37,13 @@ quizup-deploy/
 
 ## 3. Services déployés
 
-| Dossier | Service | Type |
-|---|---|---|
-| `apps/frontend` | `quizup-frontend` | web-application (nginx) |
-| `apps/gateway` | `quizup-gateway` | API Gateway |
-| `apps/identity` | `quizup-identity` | microservice |
-| `apps/theme` | `quizup-theme` | microservice |
-| `apps/social` | `quizup-social` | microservice |
+| Dossier            | Service              | Type         |
+|--------------------|----------------------|--------------|
+| `apps/gateway`     | `quizup-gateway`     | API Gateway  |
+| `apps/identity`    | `quizup-identity`    | microservice |
+| `apps/theme`       | `quizup-theme`       | microservice |
+| `apps/social`      | `quizup-social`      | microservice |
 | `apps/matchmaking` | `quizup-matchmaking` | microservice |
-| `apps/game` | `quizup-game` | microservice |
+| `apps/game`        | `quizup-game`        | microservice |
 
-> **Note** : pas de dossier pour `user-service`, `profile-service` ni `leaderboard-service` —
-> ces services n'existent pas dans le workspace.
 
----
-
-## 4. Contrats cassés / TODO
-
-- **Aucun contrat cassé** — c'est un dépôt de déploiement.
-
----
-
-## 5. Patterns de référence
-
-Hors périmètre hexagonal. Voir `README.md` du repo pour les détails ArgoCD.
